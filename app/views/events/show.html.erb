@@ -15,5 +15,9 @@
   <%= @event.transcript %>
 </p>
 
+<p>
+<audio controls src="<%= url_for @event.recording %>"></audio>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
