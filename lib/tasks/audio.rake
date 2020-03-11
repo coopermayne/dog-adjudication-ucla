@@ -17,10 +17,10 @@ namespace :audio do
         #resp = client.get_transcription_job({ transcription_job_name: "test"})
         file_name = event.recording.blob.key
         s3_location = "s3://dog-adjudication/#{file_name}"
-
+        transcription_job_name = "gen-#{Time.now.to_i}-#{event.title}"
 
         resp = client.start_transcription_job({
-          transcription_job_name: "gen-#{Time.now.to_i}-#{event.title}",
+          transcription_job_name: transcription_job_name,
           language_code: "en-US",
           #media_sample_rate_hertz: 1,
           #media_format: "mp3", # accepts mp3, mp4, wav, flac
