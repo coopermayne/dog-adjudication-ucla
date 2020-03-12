@@ -58,12 +58,17 @@ namespace :audio do
 
             if word['start_time'].to_f - last_end_time.to_f > 1.5
               puts word['start_time'].to_f - j[index-1]['end_time'].to_f
-              res += "</p><br \><p>"
+              res += "</p><br data-start=#{word['start_time']} data-end= #{word['end_time']} \><p>"
             end
 
             wordx = word['alternatives'].first['content']
-            res += "<span data-start=" + word['start_time'] + " data-end=" +  word['end_time'] + ">" + wordx + "</span> "
+
+            res += "<span data-start=#{word['start_time']} data-end= #{word['end_time']}>#{wordx}</span>"
             
+            if index<j.length-2 && !['.','?',','].include?(j[index+1]['alternatives'].first['content'])
+              res += "<span data-start=#{word['start_time']} data-end= #{word['end_time']}> </span>"
+            end
+
             last_start_time = word['start_time']
             last_end_time = word['end_time']
           end

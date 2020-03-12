@@ -20,6 +20,7 @@
       selRange = selObj.getRangeAt(0);
       st = selRange.startContainer.parentElement.dataset.start;
       ed = selRange.endContainer.parentElement.dataset.end;
+      console.log(selRange);
       console.log(st);
       console.log(ed);
 
