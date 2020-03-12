@@ -1,23 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Case:</strong>
-  <%= @event.case_id %>
-</p>
+<nav class="navbar navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+	<div class="navbar-brand">
+		<a class="navbar-item" href="https://bulma.io">
+			<img src="https://storage.cloud.google.com/recordings-20200304123126/icons8-dog-64.png?folder&organizationId" alt="UCLA" width="30" height="30">
+		</a>
+		<audio controls id="myAudio">
+			<source src="<%= url_for( @event.recording ) %>" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+		<!-- Target -->
+		<input id="cit" value="">
 
-<p>
-  <strong>Transcript:</strong>
-  <%= @event.transcript %>
-</p>
+		<!-- Trigger -->
+		<button class="button" data-clipboard-target="#cit">
+			copy to clipboard
+		</button>
 
-<p>
-<audio controls src="<%= url_for @event.recording %>"></audio>
-</p>
+	</div>
+</nav>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<section class="column is-6 is-offset-3">
+
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Case:</strong>
+	  <%= @event.case_id %>
+	</p>
+
+	<p>
+	  <strong>Title:</strong>
+	  <%= @event.title %>
+	</p>
+
+	<p>
+	  <strong>Transcript:</strong>
+	  <%= @event.transcript.html_safe %>
+	</p>
+
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'Back', events_path %>
+</section>
