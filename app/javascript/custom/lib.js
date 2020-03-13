@@ -37,6 +37,7 @@ defaultConfig.buttons = [
 function getTimestamp(range) {
 	var ed, edF, selObj, selRange, st, stF, str;
 	selRange = range
+  console.log(range)
 	st = selRange.startContainer.parentElement.dataset.start;
 	ed = selRange.endContainer.parentElement.dataset.end;
 	stF = moment("2015-01-01").startOf('day').seconds(st).format('H:mm:ss');
