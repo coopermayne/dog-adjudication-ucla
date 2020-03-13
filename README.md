@@ -1,24 +1,11 @@
-# README
+# SETUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin18]
 
-Things you may want to cover:
+* standard Rails 6 app dependencies
 
-* Ruby version
+* needs aws credentials set up for storage
 
-* System dependencies
+* needs postgres database for local dev
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* deployed automatically through heroku
