@@ -4,7 +4,8 @@
     return citToggle = false;
   });
 
-  $(document).ready(function() {
+	$(document).on('turbolinks:load', function() {
+  //$(document).ready(function() {
     new ClipboardJS('.button');
     $('span').on("click", function(e) {
       var el, startTime;
