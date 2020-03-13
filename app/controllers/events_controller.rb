@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorized, only: [:ping]
 
 
   # GET /ping
