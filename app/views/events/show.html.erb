@@ -2,16 +2,16 @@
 
 <nav class="navbar navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
-		<a class="navbar-item" href="https://bulma.io">
+		<div class="navbar-item">
 			<img src="https://storage.cloud.google.com/recordings-20200304123126/icons8-dog-64.png?folder&organizationId" alt="UCLA" width="30" height="30">
-		</a>
+		</div>
 		<audio controls id="myAudio">
 			<source src="<%= url_for( @event.recording ) %>" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
 	</div>
-
-  <button id='zoom'>scroll to current place in transcript</button>
+  <span>&nbsp;&nbsp;</span>
+  <button class="button is-primary" id='zoom'>Find Place</button>
 
 </nav>
 
