@@ -9,6 +9,24 @@ $(document).on('turbolinks:load', function() {
 		return $('audio').get()[0].play();
 	});
 
+	var okToUpdate=true
+
+  //$('audio').bind('timeupdate', function(){
+	//if (okToUpdate) {
+		//var that = this
+		//var $x = $('span').filter(function() { 
+			//return $(this).data("start") > that.currentTime - 0.2
+			////return ($(this).data("start")<this.currentTime && $(this).data("end")>this.currentTime)
+		//}).slice(0,8)
+    //$('span').css("text-decoration", "none")
+    //$x.css("text-decoration", "underline")
+
+		//okToUpdate = false
+		//setTimeout(function(){okToUpdate=true},2000);
+		
+	//}
+  //})
+
 	$("#zoom").click(function() {
 		var cTime = $('audio').prop('currentTime')
 
